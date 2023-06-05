@@ -19,7 +19,7 @@ export const InputField: React.FunctionComponent<InputFieldProps> = ({ className
                 {...rest}
                 {...register(name)}
                 className={clsx(
-                    'w-full text-black shadow-lg rounded-[10px] p-4 text-sm font-light border-none outline-none placeholder:italic',
+                    'w-full text-[#FFBD59] placeholder:text-[#FFBD59] shadow-lg rounded-[10px] px-4 py-2 text-[26px]  border-none outline-none  bg-[#ACA4A1]',
                     className
                 )}
             />

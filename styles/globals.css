@@ -20,6 +20,10 @@
     }
 }
 
+html {
+    font-family: 'Poiret One', cursive;
+}
+
 .fade-in {
     animation-name: fadeIn;
     animation-duration: 0.5s;

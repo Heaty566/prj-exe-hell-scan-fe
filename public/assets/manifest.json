@@ -4,8 +4,8 @@
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
-    "name": "Unblur",
-    "short_name": "Unblur",
+    "name": "Make it Home",
+    "short_name": "Make it Home",
     "url_handlers" : [
         {
             "origin": "https://test-payment.momo.vn"

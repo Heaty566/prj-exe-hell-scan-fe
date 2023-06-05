@@ -37,35 +37,31 @@ const Login: React.FunctionComponent<LoginProps> = () => {
                 <div className="absolute top-0 left-0 w-full h-full fade-in">
                     <img src="/assets/images/login/bg.jpg" className="object-cover object-top w-full h-full" alt="" />
                 </div>
-                <div className="relative z-10 flex flex-col items-center justify-center h-[calc(100vh)]">
-                    <div className="absolute w-8 h-8 text-white cursor-pointer top-5 left-5" onClick={() => router.push('/')}>
-                        <ChevronLeftIcon />
+                <div className="relative z-10 flex flex-col items-center  h-[calc(100vh)]">
+                    <div className="bg-[#FFBD59] relative w-full pl-20">
+                        <div>Make it Home</div>
+                        <img src="/assets/images/login/logo.png" className="absolute top-0 z-50 object-cover object-top h-16 left-4" alt="" />
                     </div>
-                    <div className="h-[120px] w-[120px]">
-                        <img src="/assets/images/welcome/logo.png" alt="" className="w-full h-full" />
-                    </div>
-                    <p className="max-w-[282px] w-full text-white text-base text-center mb-6">
-                        Cùng lưu lại những khoảnh khắc thú vị với UnBlur nhé!
-                    </p>
-                    <FormProvider {...methods}>
-                        <form onSubmit={methods.handleSubmit(onSubmit)} className="w-[390px] justify-center items-center flex-col gap-4 flex  px-4">
-                            <InputField label="Email/SĐT" type="text" placeholder="Email/SĐT" name="phone" />
-                            <InputField label="Mật khẩu" type="password" placeholder="Mật khẩu" name="password" />
+                    <div className="flex flex-col justify-center flex-1 mt-12 space-y-4">
+                        <div>
+                            <span className="text-[26px] text-[#443A3A] bg-[#FFBD59] px-5 rounded-[12px] py-2">Login</span>
+                        </div>
+                        <FormProvider {...methods}>
+                            <form
+                                onSubmit={methods.handleSubmit(onSubmit)}
+                                className="bg-[#675853] min-w-[320px] space-y-8  px-6 py-9 rounded-[12px]"
+                            >
+                                <InputField label="Email/SĐT" type="text" placeholder="Email" name="phone" />
+                                <InputField label="Mật khẩu" type="password" placeholder="Mật khẩu" name="password" />
 
-                            <Button label="Đăng nhập" type="submit" />
-                        </form>
-                    </FormProvider>
-                    <Link href={'/auth/forget-password'}>
-                        <p className="mt-4 text-base italic font-light text-white underline cursor-pointer">Quên mật khẩu ?</p>
-                    </Link>
-                    <p className="mt-4 text-base text-white">
-                        Nếu bạn chưa có tài khoản{' '}
-                        <Link href={'/auth/register'}>
-                            <span className="underline uppercase">Đăng ký</span>
-                        </Link>
-                    </p>
-                    <div className="mt-6">
-                        <SocialLogin />
+                                <button className="bg-[#FFBD59] text-[26px] w-full rounded-[8px] text-[#443A3A] py-1">LOGIN</button>
+                            </form>
+                        </FormProvider>
+                    </div>
+                    <div className="bg-[#443A3A] relative w-full pl-20 h-6">
+                        <button className="bg-[#FFBD59] text-[18px] rounded-[8px] text-[#443A3A] py-1 absolute bottom-4 right-4 px-4">
+                            Contact Us
+                        </button>
                     </div>
                 </div>
             </div>
