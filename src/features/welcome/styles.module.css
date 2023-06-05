@@ -1,0 +1,16 @@
+.bg {
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0) -23.04%, #000000 114.71%);
+}
+
+.bg-img {
+    background: linear-gradient(151.04deg, rgba(255, 255, 255, 0.6) 2.57%, rgba(255, 255, 255, 0.2) 94.35%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+
+    border-radius: 10px;
+}
+
+.line {
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0) 0%, #ecb7b3 48.44%, rgba(217, 217, 217, 0) 100%);
+}

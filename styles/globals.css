@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.fade-in {
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.text-robo {
+    font-family: 'Roboto', sans-serif;
+}
+
+.shadow-cs {
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+.button-cs {
+    background: linear-gradient(93.73deg, #ecb7b3 0%, #fbe0d9 100%);
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.bg-cs {
+    background: linear-gradient(167.98deg, rgba(251, 224, 217, 0.9) 0%, rgba(236, 183, 179, 0.9) 100%);
+}
+
+.bg-border-cs {
+    background: linear-gradient(151.04deg, rgba(255, 255, 255, 0.6) 2.57%, rgba(255, 255, 255, 0.2) 94.35%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.05);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+.momo-bg {
+    background: linear-gradient(151.04deg, rgba(255, 255, 255, 0.6) 2.57%, rgba(255, 255, 255, 0.2) 94.35%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+}
