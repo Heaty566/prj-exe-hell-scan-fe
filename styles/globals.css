@@ -74,3 +74,18 @@ html {
     backdrop-filter: blur(10px);
     border-radius: 10px;
 }
+.dot {
+    position: relative;
+}
+
+.dot::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -0.5rem;
+    transform: translate(-50%, -50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: white;
+}
