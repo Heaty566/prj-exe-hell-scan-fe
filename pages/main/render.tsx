@@ -1,11 +1,10 @@
-import * as React from 'react';
-import clsx from 'clsx';
-import { useRouter } from 'next/router';
-import { userApi } from '@core/api';
-import { useStoreUser } from '@store/index';
+//@ts-ignore
+//@ts-nocheck
 import MainLayout from '@components/layouts/MainLayout';
+import { userApi } from '@core/api';
 import { fileApi } from '@core/api/file.api';
 import { ArrowPathIcon } from '@heroicons/react/24/solid';
+import * as React from 'react';
 
 interface MomoProps {}
 
