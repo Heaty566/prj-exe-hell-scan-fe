@@ -43,4 +43,9 @@ export const userApi = {
         const res = await http.post<any>(`/wallet/deposit/momo`, { amount, redirectUrl });
         return _get(res, 'data');
     },
+
+    v1Scan: async (objectUrl: string, backgroudUrl: string) => {
+        const res = await http.post<any>(`/users/image-scan`, { objectUrl, backgroudUrl });
+        return _get(res, 'data');
+    },
 };

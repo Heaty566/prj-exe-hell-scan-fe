@@ -25,7 +25,6 @@ const Login: React.FunctionComponent<LoginProps> = () => {
     const methods = useForm<IV1AuthLogin>({ defaultValues });
 
     const onSubmit = (data: IV1AuthLogin) => {
-        router.push('/main');
         authApi.v1PostLogin(data).then((res) => {
             const cookies = new Cookies();
             cookies.set(constant.TOKEN_COOKIE_KEY, res);
