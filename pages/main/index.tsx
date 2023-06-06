@@ -36,7 +36,7 @@ const Momo: React.FC<MomoProps> = () => {
                         </div>
                         <div className="bg-[#FFBD59] h-4"></div>
                     </div>
-                    <div className="mx-4">
+                    <div className="mx-4 space-y-4">
                         <div className="bg-[#5E5151] bg-opacity-70 px-2 py-2 rounded-2xl text-[14px]">
                             <div className="text-[#FFBD59]">Make it Home</div>
                             <div className="font-thin text-white">
