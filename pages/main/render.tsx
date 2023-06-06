@@ -5,6 +5,7 @@ import { userApi } from '@core/api';
 import { fileApi } from '@core/api/file.api';
 import { ArrowPathIcon } from '@heroicons/react/24/solid';
 import * as React from 'react';
+import { toast } from 'react-toastify';
 
 interface MomoProps {}
 
@@ -18,6 +19,16 @@ const Momo: React.FC<MomoProps> = () => {
 
     const handleScan = async () => {
         if (imageObjRef?.current && imageBgRef?.current) {
+            if (imageObjRef?.current?.src.includes('place')) {
+                toast.error('Please add image');
+                return;
+            }
+
+            if (imageBgRef?.current?.src.includes('place')) {
+                toast.error('Please add image');
+                return;
+            }
+
             setIsLoading(true);
             const res = await userApi.v1Scan(imageObjRef.current.src, imageBgRef.current.src);
             setIsLoading(false);
@@ -65,13 +76,14 @@ const Momo: React.FC<MomoProps> = () => {
                     />
                     <div className="space-y-8">
                         <div className="bg-[#6A5851] pt-4 pb-6 px-4  rounded-2xl space-y-6 flex flex-col justify-center items-center relative">
-                            <div className="flex space-x-4">
+                            <div className="flex space-x-4 max-h-[250px]">
                                 <div className="flex-1">
                                     <img
                                         onClick={() => {
                                             input?.current?.click();
                                         }}
                                         ref={imageObjRef}
+                                        className="object-cover w-full h-full"
                                         src="/assets/images/login/place-1.png"
                                     />
                                 </div>
@@ -81,6 +93,7 @@ const Momo: React.FC<MomoProps> = () => {
                                             input2?.current?.click();
                                         }}
                                         ref={imageBgRef}
+                                        className="object-cover w-full h-full"
                                         src="/assets/images/login/place-2.png"
                                     />
                                 </div>
