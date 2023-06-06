@@ -4,6 +4,8 @@ import { useRouter } from 'next/router';
 import { userApi } from '@core/api';
 import { useStoreUser } from '@store/index';
 import MainLayout from '@components/layouts/MainLayout';
+import { ChevronRightIcon } from '@heroicons/react/24/solid';
+import Link from 'next/link';
 
 interface MomoProps {}
 
@@ -12,8 +14,24 @@ const Momo: React.FC<MomoProps> = () => {
         <>
             <MainLayout>
                 <div className="flex flex-col justify-center flex-1 mx-4 space-y-4 ">
-                    <div>
-                        <span className="text-[26px] text-[#443A3A] bg-[#FFBD59] px-5 rounded-[12px] py-2">Subscription</span>
+                    <div className="flex h-[192px] relative rounded-tr-3xl overflow-hidden">
+                        <div className="absolute right-2 top-2">
+                            <Link href="/main/render">
+                                <button className="text-[26px] text-[#443A3A] bg-[#FFBD59] px-6 rounded-[12px] py-1 flex flex-col">
+                                    <span className="text-[12px]">Try it</span>
+                                    <div className="flex items-center justify-center">
+                                        <span className="text-[20px]">Now</span>
+                                        <ChevronRightIcon className="w-4 h-4" />
+                                    </div>
+                                </button>
+                            </Link>
+                        </div>
+                        <div>
+                            <img src="/assets/images/login/banner.png" className="h-full" />
+                        </div>
+                        <div className="flex-1 w-full">
+                            <img src="/assets/images/login/ani.gif" className="w-full h-full" />
+                        </div>
                     </div>
                     <div className="bg-[#5E5151] bg-opacity-70 px-2 py-2 rounded-2xl text-[14px]">
                         <div className="text-[#FFBD59]">Make it Home</div>
@@ -43,9 +61,11 @@ const Momo: React.FC<MomoProps> = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="absolute right-3 -bottom-3">
-                                <span className="text-[14px] text-[#443A3A] bg-[#FFBD59] px-2 rounded-[12px] py-1">Subscribe</span>
-                            </div>
+                            <Link href="/main/momo">
+                                <div className="absolute right-3 -bottom-3">
+                                    <span className="text-[14px] text-[#443A3A] bg-[#FFBD59] px-2 rounded-[12px] py-1">Subscribe</span>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                 </div>
