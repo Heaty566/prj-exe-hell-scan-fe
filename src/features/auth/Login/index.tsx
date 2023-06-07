@@ -11,6 +11,7 @@ import Cookies from 'universal-cookie';
 
 import { SocialLogin } from '../SocialLogin';
 import MainLayout from '@components/layouts/MainLayout';
+import { toast } from 'react-toastify';
 
 interface LoginProps {}
 
@@ -25,11 +26,16 @@ const Login: React.FunctionComponent<LoginProps> = () => {
     const methods = useForm<IV1AuthLogin>({ defaultValues });
 
     const onSubmit = (data: IV1AuthLogin) => {
-        authApi.v1PostLogin(data).then((res) => {
-            const cookies = new Cookies();
-            cookies.set(constant.TOKEN_COOKIE_KEY, res);
-            router.push('/main');
-        });
+        authApi
+            .v1PostLogin(data)
+            .then((res) => {
+                const cookies = new Cookies();
+                cookies.set(constant.TOKEN_COOKIE_KEY, res);
+                router.push('/main');
+            })
+            .catch((err) => {
+                toast.error('Email or password is incorrect.');
+            });
     };
 
     return (
@@ -43,8 +49,12 @@ const Login: React.FunctionComponent<LoginProps> = () => {
                         <form onSubmit={methods.handleSubmit(onSubmit)} className="bg-[#675853] min-w-[320px] space-y-8  px-6 py-9 rounded-[12px]">
                             <InputField label="Email" type="text" placeholder="Email" name="phone" />
                             <InputField label="Password" type="password" placeholder="Password" name="password" />
-
-                            <button className="bg-[#FFBD59] text-[26px] w-full rounded-[8px] text-[#443A3A] py-1">LOGIN</button>
+                            <div className="space-y-1">
+                                <button className="bg-[#FFBD59] text-[26px] w-full rounded-[8px] text-[#443A3A] py-1">LOGIN</button>
+                                <Link href={'/auth/register'}>
+                                    <div className="text-center text-gray-300">Register new account</div>
+                                </Link>
+                            </div>
                         </form>
                     </FormProvider>
                 </div>
